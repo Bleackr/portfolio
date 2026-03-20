@@ -12,7 +12,7 @@ export default function Hero() {
           Hi, my name is
         </p>
         <h1 style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', marginBottom: '1rem', letterSpacing: '-2px' }}>
-          Mikolaj Hyzy.
+          Mike Wazowski.
         </h1>
         <h2 style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', color: 'var(--text-secondary)', marginBottom: '2rem' }}>
           I build <span className="text-gradient">digital experiences</span>.

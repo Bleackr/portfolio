@@ -22,7 +22,7 @@ function App() {
           </Routes>
         </main>
         <footer style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-          <p>Built by Mikolaj Hyzy</p>
+          <p>Built by Mike Wazowski</p>
         </footer>
       </Router>
     </div>

@@ -12,7 +12,7 @@ export default function Header() {
           alignItems: 'center', padding: '1rem 2rem'
         }}>
           <div style={{ fontWeight: '800', fontSize: '1.2rem', letterSpacing: '-0.5px' }}>
-            <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>MH.</Link>
+            <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>MW.</Link>
           </div>
           <nav style={{ display: 'flex', gap: '2rem', fontWeight: '600', fontSize: '0.9rem', alignItems: 'center' }}>
             <Link to="/about" style={{ textDecoration: 'none', color: 'inherit' }}>About</Link>
