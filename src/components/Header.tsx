@@ -1,21 +1,8 @@
-import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useThemeStore } from '../store/themeStore';
 
 export default function Header() {
-  const [theme, setTheme] = useState('dark');
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    setTheme(savedTheme);
-    document.documentElement.setAttribute('data-theme', savedTheme);
-  }, []);
-
-  const toggleTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-  };
+  const { theme, toggleTheme } = useThemeStore();
 
   return (
     <div style={{ position: 'fixed', top: '1rem', left: 0, right: 0, zIndex: 100 }}>
