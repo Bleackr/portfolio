@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Hero() {
   return (
@@ -19,13 +20,14 @@ export default function Hero() {
         <p style={{ maxWidth: '600px', color: 'var(--text-secondary)', fontSize: '1.1rem', marginBottom: '3rem' }}>
           I'm a software engineer specializing in building exceptional digital experiences. Currently, I'm focused on creating accessible, human-centered products.
         </p>
-        <a href="#projects" className="glass" style={{
+        <Link to="/projects" className="glass" style={{
           display: 'inline-block', padding: '1rem 2.5rem', fontWeight: '600',
-          border: '1px solid var(--accent)', color: 'var(--accent)', transition: 'all 0.3s'
+          border: '1px solid var(--accent)', color: 'var(--accent)', transition: 'all 0.3s',
+          textDecoration: 'none'
         }} onMouseOver={e => { e.currentTarget.style.background = 'rgba(99, 102, 241, 0.1)'; }}
            onMouseOut={e => { e.currentTarget.style.background = 'var(--glass-bg)'; }}>
           Check out my work
-        </a>
+        </Link>
       </div>
     </section>
   );
