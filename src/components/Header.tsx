@@ -1,7 +1,22 @@
-
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Header() {
+  const [theme, setTheme] = useState('dark');
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    setTheme(savedTheme);
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+  };
+
   return (
     <div style={{ position: 'fixed', top: '1rem', left: 0, right: 0, zIndex: 100 }}>
       <div className="container">
@@ -12,10 +27,24 @@ export default function Header() {
           <div style={{ fontWeight: '800', fontSize: '1.2rem', letterSpacing: '-0.5px' }}>
             <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>MH.</Link>
           </div>
-          <nav style={{ display: 'flex', gap: '2rem', fontWeight: '600', fontSize: '0.9rem' }}>
+          <nav style={{ display: 'flex', gap: '2rem', fontWeight: '600', fontSize: '0.9rem', alignItems: 'center' }}>
             <Link to="/about" style={{ textDecoration: 'none', color: 'inherit' }}>About</Link>
             <Link to="/projects" style={{ textDecoration: 'none', color: 'inherit' }}>Projects</Link>
             <Link to="/contact" style={{ textDecoration: 'none', color: 'inherit' }}>Contact</Link>
+            <button 
+              onClick={toggleTheme}
+              style={{
+                background: 'transparent',
+                border: '1px solid var(--text-secondary)',
+                color: 'var(--text-primary)',
+                borderRadius: '8px',
+                padding: '0.4rem 0.8rem',
+                cursor: 'pointer',
+                fontWeight: '600'
+              }}
+            >
+              {theme === 'dark' ? '☀️ Light' : '🌙 Dark'}
+            </button>
           </nav>
         </header>
       </div>

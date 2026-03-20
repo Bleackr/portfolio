@@ -9,6 +9,15 @@
   --glass-border: rgba(255, 255, 255, 0.1);
 }
 
+[data-theme='light'] {
+  --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --accent: #4f46e5;
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(0, 0, 0, 0.1);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -22,6 +31,10 @@ body {
   color: var(--text-primary);
   min-height: 100vh;
   line-height: 1.6;
+}
+
+main {
+  padding-top: 8rem;
 }
 
 /* Glassmorphism Classes */
