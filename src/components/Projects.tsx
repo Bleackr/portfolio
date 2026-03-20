@@ -1,6 +1,12 @@
-import React from 'react';
 
-const projects = [
+
+interface Project {
+  title: string;
+  desc: string;
+  tech: string;
+}
+
+const projects: Project[] = [
   { title: 'Project One', desc: 'A modern web application built with React and Vite. Focused on performance and aesthetics.', tech: 'React • CSS' },
   { title: 'Project Two', desc: 'An interactive dashboard showing real-time data analytics with glassmorphism UI.', tech: 'React • D3' },
   { title: 'Project Three', desc: 'A responsive e-commerce storefront with seamless animations and transitions.', tech: 'React • Tailwind' }
